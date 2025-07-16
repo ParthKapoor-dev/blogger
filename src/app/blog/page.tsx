@@ -5,7 +5,7 @@ import { Metadata } from "next"
 
 const posts = getPosts().sort(
   (a, b) =>
-    new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime()
+    new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime(),
 )
 
 export default async function BlogPage() {
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "https://www.nexxel.dev/og/home?title=blog",
+        url: "https://www.dev.parthkapoor.me/og/home?title=blog",
       },
     ],
   },

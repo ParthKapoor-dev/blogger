@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og"
 
 async function loadGoogleFont(font: string, text: string) {
   const url = `https://fonts.googleapis.com/css2?family=${font}&text=${encodeURIComponent(
-    text
+    text,
   )}`
   const css = await (await fetch(url)).text()
   const resource = css.match(/src: url\((.+)\) format\('(opentype|truetype)'\)/)
@@ -19,7 +19,7 @@ async function loadGoogleFont(font: string, text: string) {
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
-  const title = searchParams.get("title") ?? "nexxel's blog"
+  const title = searchParams.get("title") ?? "parth's blog"
 
   return new ImageResponse(
     (
@@ -38,7 +38,7 @@ export async function GET(request: Request) {
         }}
       >
         <img
-          src="https://www.nexxel.dev/nexxel.jpg"
+          src="https://www.dev.parthkapoor.me/parth.jpg"
           style={{
             position: "absolute",
             bottom: "40px",
@@ -92,6 +92,6 @@ export async function GET(request: Request) {
           style: "normal",
         },
       ],
-    }
+    },
   )
 }
