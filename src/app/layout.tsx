@@ -46,6 +46,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/penguin.png" sizes="any" />
+      </head>
       <body
         className={`${geistMono.variable} antialiased min-h-screen font-mono`}
       >
